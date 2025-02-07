@@ -22,30 +22,51 @@ body {
     border-radius: 5px;
 }
 
-.main-body .button-g {
+.main-body .button-respon {
     position: relative;
     padding: 2px;
     color: rgb(255, 255, 255);
-    top: -5px;
-    right: 100px;
+    top: -6px;
+    right: 90px;
     font-size: large;
     text-align: center;
     border-radius: 3px;
     border: 2px solid #858585;
 }
 
-.main-body .g-button-lable {
+.main-body .respon-lable {
     position: relative;
     padding: 2px;
     color: rgb(255, 255, 255);
-    top: -5px;
-    right: 98px;
+    top: -6px;
+    right: 90px;
     font-size: 15px;
     text-align: center;
-
 }
 
-.notfi-body {
+.main-body .button-clear {
+    position: relative;
+    padding: 2px;
+    color: rgb(255, 255, 255);
+    top: -6px;
+    right: 80px;
+    font-size: large;
+    text-align: center;
+    border-radius: 3px;
+    border: 2px solid #858585;
+}
+
+.main-body .clear-lable {
+    position: relative;
+    padding: 2px;
+    color: rgb(255, 255, 255);
+    top: -6px;
+    right: 80px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.report-body {
     position: relative;
     right: 10px;
     width: 290px;
@@ -58,7 +79,7 @@ body {
     border-radius: 10px;
 }
 
-.notfi-body .notes {
+.report-body .report {
     text-shadow: rgb(0, 0, 0) 1px 0 11px;
     font-size: 20px;
     text-align: center;
@@ -67,8 +88,42 @@ body {
 
 }
 
-.notfi-body .notes.large {
+.report-body .report.large {
     font-family: fantasy;
     font-size: 35px; /* Target font size */
     color: rgb(204, 0, 0);
+}
+
+
+.loaction-report {
+    position: relative;
+    right: 0px;
+    bottom: -9px;
+    width: 290px;
+    height: 15px;
+    padding: 8px;
+    background-color: #4e4e4e;
+    border: 2px solid #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #d8b800;
+    text-shadow: rgb(0, 0, 0) 1px 0 11px;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.loaction-report .street1 {
+    text-shadow: rgb(0, 0, 0) 1px 0 11px;
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+    transition: font-size 0.5s; /* Add transition for smooth animation */
+}
+
+.loaction-report .street2 {
+    text-shadow: rgb(0, 0, 0) 1px 0 11px;
+    font-size: 13px;
+    text-align: center;
+    color: #ffffff;
+    transition: font-size 0.5s; /* Add transition for smooth animation */
 }

@@ -6,10 +6,21 @@ RegisterCommand('hide', function ()
     SendNUIMessage({event = "HideUI",})
 end)
 
-RegisterCommand('update', function ()
-    SendNUIMessage({event = "UpdateReport", report = 'OPPPSSS You Got Report In the cityy !!'})
+RegisterCommand('clear', function()
+    local myData = {
+        text = "No Reports Found",
+        street1 = "none",
+        street2 = "none"
+    }
+    SendNUIMessage({
+        type = 'clearData',  -- This is a custom type to identify the message
+        data = myData         -- The data you want to send
+    })
 end)
 
-RegisterCommand('clear-reprots', function ()
-    SendNUIMessage({event = "ClearReport", report = 'Cleared Reports'})
+RegisterNetEvent('report:client:UpdateReports', function (myData)
+    SendNUIMessage({
+        type = 'updateData',  -- This is a custom type to identify the message
+        data = myData         -- The data you want to send
+    })
 end)

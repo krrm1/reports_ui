@@ -2,40 +2,44 @@
         $("body").show();
     }
     
-    function UpdateHide(report) {
+    function UpdateHide() {
         $("body").hide();
-        // $(".notes").removeClass("large"); // To reset font size
     }
-
-    function UpdateReport(report) {
-        $(".notes").html(report);
-        $(".notes").addClass("large"); // To increase font size
-    }
-
-    function ClearReport(report) {
-        $(".notes").html(report);
-        $(".notes").removeClass("large"); // To reset font size
-    }
-
     
-window.addEventListener('message', function(event, report) {
-    let data = event.data;
+    window.addEventListener('message', function(event) {
+        let data = event.data;
 
-    switch (data.event) {
-        case 'ShowUI':
-            UpdateShow();
-        break;
+        switch (data.event) {
+            case 'ShowUI':
+                UpdateShow();
+            break;
+    
+            case 'HideUI':
+                UpdateHide();
+            break;
+        }
+    
+        // Check if the message type is 'updateData'
+        if (event.data.type === 'updateData') {
+            // Access the data sent from Lua
+            const Reportdata = event.data.data;
+    
+            // Now you can use the data in your JavaScript code
+        $(".report").html(Reportdata.text);
+        $(".street1").html(Reportdata.street1);
+        $(".street2").html(Reportdata.street2);
+        $(".report").addClass("large"); // To increase font size
+        }
 
-        case 'HideUI':
-            UpdateHide();
-        break;
-
-        case 'UpdateReport':
-            UpdateReport(data.report); // To Updata Report
-        break;
-
-        case 'ClearReport':
-            ClearReport(data.report); // To Clear Report
-        break;
-    }
-});
+        // Check if the message type is 'updateData'
+        if (event.data.type === 'clearData') {
+            // Access the data sent from Lua
+            const Reportdata = event.data.data;
+    
+            // Now you can use the data in your JavaScript code
+        $(".report").html(Reportdata.text);
+        $(".street1").html(Reportdata.street1);
+        $(".street2").html(Reportdata.street2);
+        $(".report").removeClass("large"); // To reset font size
+        }
+    });
